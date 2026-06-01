@@ -1,0 +1,44 @@
+body {
+    font-family: var(--font);
+    font-size: small;
+}
+
+nav {
+    background-color: var(--oranje);
+    height: 55px;
+    width: 100dvw;
+    padding: 4px;
+    color: var(--wit);
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+    .mobile-nav-icoon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    img {
+        width: 100px;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+    }
+
+    .nav-rechts {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+    }
+
+    a{
+        color: var(--wit);
+        text-decoration: none;
+    }
+}
