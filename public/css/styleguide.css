@@ -23,3 +23,7 @@
     /* Lettertype */
     --font: "Proxima Nova Regular";
 }
+
+body {
+    margin: 0;
+}
