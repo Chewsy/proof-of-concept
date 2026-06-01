@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "Proxima Nova Regular";
+    src: url("../assets/Proxima Nova Regular.ttf");
+}
+
 :root {
     /* Primaire kleuren */
     --oranje: hsl(33, 100%, 56%);
@@ -14,14 +19,7 @@
     --lichtgroen: #ebf6e3;
     --roze: #de737d;
     --groen: #599f7e;
-}
 
-/* Lettertype */
-@font-face {
-    font-family: "Proxima Nova Regular";
-    src: url("../assets/Proxima Nova Regular.ttf");
-}
-
-body {
-    font-family: "Proxima Nova Regular";
+    /* Lettertype */
+    --font: "Proxima Nova Regular";
 }
