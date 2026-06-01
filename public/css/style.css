@@ -7,7 +7,8 @@ nav {
     background-color: var(--oranje);
     height: 55px;
     width: 100dvw;
-    padding: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
     color: var(--wit);
 
     display: flex;
@@ -37,8 +38,39 @@ nav {
         gap: 15px;
     }
 
-    a{
+    a {
         color: var(--wit);
         text-decoration: none;
+    }
+}
+
+.desktop-nav {
+    display: none;
+}
+
+@media (width >=767px) {
+    .mobile-nav {
+        display: none;
+    }
+
+    .desktop-nav {
+        display: flex;
+        justify-content: space-between;
+        gap: 60px;
+        padding-left: 4px;
+        padding-right: 4px;
+
+        .desktop-nav-link {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: medium;
+
+        }
+
+        /* fix vinden */
+        .nav-rechts {
+            margin-right: 20px;
+        }
     }
 }
