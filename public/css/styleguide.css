@@ -1,0 +1,17 @@
+:root{
+    /* Primaire kleuren */
+    --oranje: hsl(33, 100%, 56%);
+    --bruin: hsl(9, 58%, 26%);
+    --wit: hsl(0, 0%, 100%);
+    --gebroken-wit: hsl(33, 56%, 94%);
+    --lichtblauw: hsl(201, 100%, 95%);
+    --blauw: hsl(205, 69%, 51%);
+
+    /* Secundaire kleuren */
+    --donkergrijs: #333333;
+    --felblauw: #64c1ed;
+    --lichtroze: #fde9eb;
+    --lichtgroen: #ebf6e3;
+    --roze: #de737d;
+    --groen: #599f7e;
+}
