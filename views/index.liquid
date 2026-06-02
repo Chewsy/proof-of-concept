@@ -1,3 +1,18 @@
 {% render 'partials/head.liquid' %}
+
+
+<section class="details">
+{% for house in houses limit:1 %}
+  <img src="https://fdnd-agency.directus.app/assets/{{ house.poster_image }}.png"> 
+  <div class="details-container">
+  <h1>{{ house.street }}</h1>
+  <span>{{ house.postal_code }}</span>
+    <span>{{ house.city }}</span>
+    {% comment %} buurt field ontbreekt {% endcomment %}
+    <a href="https://www.funda.nl/informatie/almere/europakwartier-oost-brt">Europakwartier Oost (brt)</a>
+
+  </div>
+{% endfor %}
+
   </body>
 </html>

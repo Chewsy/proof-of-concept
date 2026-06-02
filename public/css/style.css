@@ -3,10 +3,10 @@ body {
     font-size: small;
 }
 
+/* Navigatie */
 nav {
     background-color: var(--oranje);
     height: 55px;
-    width: 100dvw;
     padding-left: 4px;
     padding-right: 4px;
     color: var(--wit);
@@ -72,5 +72,25 @@ nav {
         .nav-rechts {
             margin-right: 20px;
         }
+    }
+}
+
+/* Details */
+.details {
+    img {
+        width: 100%;
+    }
+
+    h1 {
+        font-weight: 1000;
+    }
+
+    span {
+        color: var(--donkergrijs);
+    }
+
+    a {
+        color: var(--blauw);
+        text-decoration: none;
     }
 }
