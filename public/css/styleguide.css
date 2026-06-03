@@ -1,6 +1,21 @@
 @font-face {
     font-family: "Proxima Nova Regular";
-    src: url("../assets/Proxima Nova Regular.ttf");
+    src: url("../fonts/Proxima Nova Regular.ttf");
+}
+
+@font-face {
+    font-family: "Proxima Nova Extrabold";
+    src: url("../fonts/Proxima Nova Extrabold.ttf");
+}
+
+@font-face {
+    font-family: "Proxima Nova Light";
+    src: url("../fonts/Proxima Nova Light.ttf");
+}
+
+@font-face {
+    font-family: "Proxima Nova Semibold";
+    src: url("../fonts/Proxima Nova Semibold.ttf");
 }
 
 :root {
@@ -14,6 +29,7 @@
 
     /* Secundaire kleuren */
     --donkergrijs: #333333;
+    --lichtgrijs: #999999;
     --felblauw: #64c1ed;
     --lichtroze: #fde9eb;
     --lichtgroen: #ebf6e3;
@@ -22,6 +38,9 @@
 
     /* Lettertype */
     --font: "Proxima Nova Regular";
+    --font-bold: "Proxima Nova Semibold";
+    --font-extra-bold: "Proxima Nova Extrabold";
+    --font-light: "Proxima Nova Light";
 }
 
 body {
