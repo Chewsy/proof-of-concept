@@ -28,13 +28,14 @@
     --blauw: hsl(205, 69%, 51%);
 
     /* Secundaire kleuren */
-    --donkergrijs: #333333;
-    --lichtgrijs: #999999;
-    --felblauw: #64c1ed;
-    --lichtroze: #fde9eb;
-    --lichtgroen: #ebf6e3;
-    --roze: #de737d;
-    --groen: #599f7e;
+    --donkergrijs: hsl(0, 0%, 20%);
+    --lichtgrijs: hsl(0, 0%, 60%);
+    --felblauw: hsl(199, 79%, 66%);
+    --lichtroze: hsl(354, 83%, 95%);
+    --lichtgroen: hsl(95, 51%, 93%);
+    --roze: hsl(354, 62%, 66%);
+    --groen: hsl(152, 28%, 49%);
+    --rood: hsl(4, 67%, 47%);
 
     /* Lettertype */
     --font: "Proxima Nova Regular";
@@ -42,8 +43,9 @@
     --font-extra-bold: "Proxima Nova Extrabold";
     --font-light: "Proxima Nova Light";
 
-    /* Spacing */
+    /* Spacing & DRY waardes */
     --d-space: 15px;
+    --xs-space: 4px;
 }
 
 body {
