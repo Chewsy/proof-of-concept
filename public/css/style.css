@@ -7,8 +7,8 @@ body {
 nav {
     background-color: var(--oranje);
     height: 55px;
-    padding-left: 4px;
-    padding-right: 4px;
+    padding-left: var(--xs-space);
+    padding-right: var(--xs-space);
     color: var(--wit);
 
     display: flex;
@@ -35,7 +35,7 @@ nav {
     .nav-rechts {
         display: flex;
         flex-direction: row;
-        gap: 15px;
+        gap: var(--d-space);
     }
 
     a {
@@ -57,13 +57,13 @@ nav {
         display: flex;
         justify-content: space-between;
         gap: 60px;
-        padding-left: 4px;
-        padding-right: 4px;
+        padding-left: var(--xs-space);
+        padding-right: var(--xs-space);
 
         .desktop-nav-link {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: var(--d-space);
             font-size: medium;
 
         }
@@ -76,21 +76,241 @@ nav {
 }
 
 /* Details */
+@keyframes favAnimatie {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
 .details {
+
+    .img-interacties {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+
+        z-index: 1;
+        position: absolute;
+        right: 0;
+        margin: var(--d-space);
+
+        button {
+            width: 40px;
+            height: 40px;
+            background-color: var(--wit);
+            color: var(--blauw);
+            border: none;
+            border-radius: var(--xs-space);
+            cursor: pointer;
+
+            svg {
+                transform-origin: center;
+                transition: color 0.2s ease;
+            }
+
+            .icon-filled {
+                display: none;
+            }
+
+            &.favoriet {
+                color: var(--rood);
+
+                .icon-outline {
+                    display: none;
+                }
+
+                .icon-filled {
+                    display: block;
+                }
+
+                svg {
+                    animation: favAnimatie 0.3s ease-in-out;
+                }
+            }
+        }
+    }
+
     img {
         width: 100%;
+        z-index: 0;
     }
 
-    h1 {
-        font-weight: 1000;
+    .details-container {
+        display: grid;
+        padding: var(--d-space);
+        grid-template-columns: repeat(2, auto);
+        grid-template-rows: repeat(5, auto);
+        gap: 8px;
+
+        .straat {
+            grid-column-start: 1;
+            grid-row-start: 1;
+
+            h1 {
+                font-size: 24px;
+            }
+        }
+
+        .postcode-stad-buurt {
+            grid-column-start: 1;
+            grid-row-start: 2;
+
+            span {
+                color: var(--lichtgrijs);
+            }
+        }
+
+        .prijs {
+            grid-column-start: 1;
+            grid-row-start: 3;
+
+            span {
+                font-family: var(--font-bold);
+                font-size: 20px;
+            }
+        }
+
+        .labels {
+            grid-column-start: 1;
+            grid-row-start: 4;
+        }
+
+        .maandlasten {
+            grid-column-start: 1;
+            grid-row-start: 5;
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            span {
+                color: var(--blauw);
+            }
+
+            svg {
+                fill: var(--blauw);
+            }
+        }
+
+        .map {
+            grid-row: span 5 / span 5;
+            grid-column-start: 2;
+            grid-row-start: 1;
+        }
+
+        h1 {
+            font-weight: 1000;
+        }
+
+        span {
+            color: var(--donkergrijs);
+        }
+
+        a {
+            color: var(--blauw);
+            text-decoration: none;
+        }
+
+        .labels-container {
+            display: flex;
+            flex-direction: row;
+            width: max-content;
+            height: max-content;
+
+            .label {
+                display: flex;
+                align-items: center;
+                margin-right: var(--d-space);
+
+                svg {
+                    color: var(--lichtgrijs);
+                }
+            }
+        }
+
+        .map {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+}
+
+.omschrijving {
+    padding: var(--d-space);
+}
+
+.kenmerken {
+    padding: var(--d-space);
+    font-size: 16px;
+
+    .kenmerk-container {
+        display: flex;
+        flex-direction: column;
+        padding: var(--d-space);
+        border-radius: 5px;
+        width: auto;
+        border: 1px solid var(--lichtgrijs);
+        height: max-content;
+        gap: var(--d-space);
+        margin-bottom: var(--d-space);
+
+        .kenmerken-titel {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+        }
     }
 
-    span {
-        color: var(--donkergrijs);
+    .bold {
+        font-family: var(--font-bold);
     }
 
-    a {
-        color: var(--blauw);
-        text-decoration: none;
+    .energielabel {
+        clip-path: polygon(0 0, calc(100% - .6rem) 0, 100% 50%, calc(100% - .6rem) 100%, 0 100%);
+        width: min-content;
+        padding: 3px;
+        padding-right: 15px;
+        padding-left: 5px;
+        color: var(--wit);
+        background-color: #009342;
+    }
+}
+
+.populariteit {
+    padding: var(--d-space);
+    font-size: 16px;
+
+    .populariteit-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: var(--d-space);
+        border-radius: 5px;
+        width: auto;
+        border: 1px solid var(--lichtgrijs);
+        height: max-content;
+        gap: var(--d-space);
+        margin-bottom: var(--d-space);
+
+        .populariteit-stat {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            border-right: 1px solid var(--lichtgrijs);
+
+            &:last-of-type {
+                border: none;
+            }
+        }
     }
 }
