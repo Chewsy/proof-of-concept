@@ -1,0 +1,83 @@
+<div class="listCard">
+  <img src="https://fdnd-agency.directus.app/assets/{{ house.poster_image }}.png">
+
+  <div class="details-container">
+    <button
+      class="interactie {% if favorieteHuizenIds contains house.id %}favoriet{% endif %}"
+      id="favorietKnop"
+      data-house-id="{{ house.id }}"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        fill="currentColor"
+        role="presentation"
+        viewBox="0 0 48 48"
+      >
+        <path class="icon-outline" d="M39 9.86A10.17 10.17 0 0032 7a9.9 9.9 0 00-6 2 10.1 10.1 0 00-2 2 10.1 10.1 0 00-2-2 9.91 9.91 0 00-12 0 9.9 9.9 0 00-4 8c0 15 16 24 18 24s18-9 18-24a10 10 0 00-3-7.14zm-15 28a29.61 29.61 0 01-12.72-12.1A18.77 18.77 0 019 17a7 7 0 0113.41-2.81c.06.14.11.29.17.44a1.49 1.49 0 002.82 0c.05-.15.11-.3.17-.44A7 7 0 0139 17a18.77 18.77 0 01-2.28 8.81A29.61 29.61 0 0124 37.91z"></path>
+        <path class="icon-filled" d="M39 9.86A10.17 10.17 0 0032 7a9.9 9.9 0 00-6 2 10.1 10.1 0 00-2 2 10.1 10.1 0 00-2-2 9.91 9.91 0 00-12 0 9.9 9.9 0 00-4 8c0 15 16 24 18 24s18-9 18-24a10 10 0 00-3-7.14z"></path>
+      </svg>
+    </button>
+
+    <div class="straat">
+      <h1>{{ house.street }}</h1>
+    </div>
+    <div class="postcode-stad-buurt">
+      <span>{{ house.postal_code }}</span>
+      <span>{{ house.city }}</span>
+    </div>
+
+    <div class="prijs">
+      <span>{{ house.customPrice }}</span>
+    </div>
+
+    <div class="labels-container">
+      <div class="label">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="currentColor"
+          role="presentation"
+          viewBox="0 0 48 48"
+          class="mr-1 text-neutral-40"
+        >
+          <path d="M38.5 32.25v-16.5a5 5 0 10-6.25-6.25h-16.5a5 5 0 10-6.25 6.25v16.5a5 5 0 106.25 6.25h16.5a5 5 0 106.25-6.25zm-6.25 3.25h-16.5a5 5 0 00-3.25-3.25v-16.5a5 5 0 003.25-3.25h16.5a5 5 0 003.25 3.25v16.5a5 5 0 00-3.25 3.25zM37 9a2 2 0 11-2 2 2 2 0 012-2zM11 9a2 2 0 11-2 2 2 2 0 012-2zm0 30a2 2 0 112-2 2 2 0 01-2 2zm26 0a2 2 0 112-2 2 2 0 01-2 2z"></path>
+        </svg>
+        <span>{{ house.m2 }}</span>
+      </div>
+
+      <div class="label">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="currentColor"
+          role="presentation"
+          viewBox="0 0 48 48"
+          class="mr-1 text-neutral-40"
+        >
+          <path d="M11 20l-3.999 5.999h33.998L37 20h3l3.999 5.999L44 26v9.5a1.5 1.5 0 01-1.5 1.5H39v1.5a1.5 1.5 0 01-3 0V37H12v1.5a1.5 1.5 0 01-3 0V37H5.5A1.5 1.5 0 014 35.5V26l.001-.001L8 20h3zm30 9H7v5h34v-5zM38.5 8A1.5 1.5 0 0140 9.5V20l-9-.001V21.5a1.5 1.5 0 01-1.5 1.5h-11a1.5 1.5 0 01-1.5-1.5v-1.501L8 20V9.5A1.5 1.5 0 019.5 8h29zM28 17h-8v3h8v-3zm9-6H11v5.999h6V15.5a1.5 1.5 0 011.5-1.5h11a1.5 1.5 0 011.5 1.5v1.499h6V11z"></path>
+        </svg>
+        <span>{{ house.rooms }}</span>
+      </div>
+
+      <div class="label">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="currentColor"
+          role="presentation"
+          viewBox="0 0 48 48"
+          class="mr-1 text-neutral-40"
+        >
+          <path d="M23.675 12.891l-6.852 13.063 7.032 1.628.492 7.872 7.31-13.373-7.51-1.63-.472-7.56zm2.45-8.897L27 18l6.274 1.362c1.62.351 2.295 1.818 1.5 3.274l-11.82 21.618c-.529.968-1.01.853-1.079-.248L21 30l-5.714-1.323c-1.612-.373-2.3-1.868-1.529-3.337L25.073 3.767c.511-.975.983-.874 1.052.227z"></path>
+        </svg>
+        <span>A++</span>
+      </div>
+      <a>{{ house.agent }}</a>
+    </div>
+  </div>
+</div>
