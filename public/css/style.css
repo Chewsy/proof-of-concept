@@ -437,3 +437,22 @@ nav {
         color: var(--blauw);
     }
 }
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 5px;
+    height: auto;
+    margin-bottom: var(--d-space);
+
+    & picture {
+        height: 135px;
+        overflow: hidden;
+        object-fit: cover;
+    }
+
+    & picture:nth-of-type(1) {
+        grid-column: span 2 / span 2;
+        height: 100%;
+    }
+}

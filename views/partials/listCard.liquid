@@ -1,8 +1,13 @@
 <div class="listCard">
-
-{% for image in house.gallery limit:1%}
-  {% include "partials/enhancedImage.liquid", house: house, limit: 5 %}
-{% endfor %}
+  <div class="gallery">
+    {% for image in house.gallery limit: 3 %}
+      <picture>
+        <source type="image/avif" srcset="https://fdnd-agency.directus.app/assets/{{ image }}?format=avif">
+        <source type="image/webp" srcset="https://fdnd-agency.directus.app/assets/{{ image }}?format=webp">
+        <img src="https://fdnd-agency.directus.app/assets/{{ image }}" alt="Alternatieve tekst" width="100%">
+      </picture>
+    {% endfor %}
+  </div>
 
   <div class="details-container">
     <button
