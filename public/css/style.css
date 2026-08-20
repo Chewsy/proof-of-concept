@@ -440,6 +440,7 @@ nav {
 
 .listCard{
     border: 1px solid var(--lichtgrijs);
+    margin-bottom: 20px;
 
 & .gallery {
     display: grid;
