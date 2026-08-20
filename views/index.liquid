@@ -18,4 +18,36 @@
     </button>
   </div>
 
+    <div class="topPositie">
+    <span class="topPositieLabel">Toppositie</span>
+
+    <div class="topCardsList">
+      {% for house in houses limit:3 %}
+  <img src="https://fdnd-agency.directus.app/assets/{{ house.poster_image }}.png"> 
+
+  <div class="details-container">
+    <span>{{ house.street }}</span>
+      <div class="stad-prijs">
+        <span>{{ house.city }}</span>
+        <span>{{ house.customPrice }}</span>
+  </div>
+      <span>{{ house.agent }}</span>
+  </div>
+{% endfor %}
+  </div>
+
+  <div class="resultatenInfoContainer">
+    <div class="resultatenInfo">
+      {% comment %} Data hoeveelheid koopwoningen ophalen {% endcomment %}
+      <p>86.685 koopwoningen</p>
+      <p>in Nederland</p>
+    </div>
+    <button class="sorteer">
+      <img src="./assets/sorteer_icon.svg">
+      <span>Sorteer</span>
+    </button>
+  </div>
+
+</section>
+
 {% render 'partials/foot.liquid' %}
