@@ -63,3 +63,7 @@ h2 {
     margin: 0;
     font-family: var(--font-bold);
 }
+
+section{
+    padding: 10px;
+}
