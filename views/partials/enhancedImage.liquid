@@ -1,4 +1,4 @@
-{% for image in house.gallery %}
+{% for image in house.gallery limit: limit %}
 
 <picture>
   <source type="image/avif" srcset="https://fdnd-agency.directus.app/assets/{{ image }}?format=avif">
