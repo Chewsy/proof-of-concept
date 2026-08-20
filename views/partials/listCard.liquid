@@ -1,5 +1,8 @@
 <div class="listCard">
-  <img src="https://fdnd-agency.directus.app/assets/{{ house.poster_image }}.png">
+
+{% for image in house.gallery limit:1%}
+  {% include "partials/enhancedImage.liquid", image: image %}
+{% endfor %}
 
   <div class="details-container">
     <button

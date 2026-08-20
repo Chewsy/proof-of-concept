@@ -23,7 +23,8 @@
 
     <div class="topCardsList">
       {% for house in houses limit:3 %}
-  <img src="https://fdnd-agency.directus.app/assets/{{ house.poster_image }}.png"> 
+        
+{% include "partials/enhancedImage.liquid", image: house.poster_image %}
 
   <div class="details-container">
     <span>{{ house.street }}</span>
