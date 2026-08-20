@@ -38,15 +38,22 @@
     --rood: hsl(4, 67%, 47%);
 
     /* Lettertype */
-    --font: "Proxima Nova Regular";
-    --font-bold: "Proxima Nova Semibold";
     --font-extra-bold: "Proxima Nova Extrabold";
+    --font-bold: "Proxima Nova Semibold";
+    --font: "Proxima Nova Regular";
     --font-light: "Proxima Nova Light";
 
-    /* Spacing & DRY waardes */
-    --d-space: 16px;
-    --s-space: 8px;
-    --xs-space: 4px;
+    /* Spacing & sizing */
+    --xl-size: 1.5rem;
+    --l-size: 1.25rem;
+    --d-size: 1rem;
+    --m-size: 0.625rem;
+    --s-size: 0.5rem;
+    --xs-size: 0.313rem;
+    --xxs-size: 0.25rem;
+
+    --s-border: 0.031rem;
+    --d-border: 0.063rem;
 }
 
 body {
@@ -55,7 +62,7 @@ body {
 }
 
 hr {
-    border: 0.5px solid #e6e6e6;
+    border: var(--s-border) solid var(--wit);
     width: 100%;
 }
 
@@ -65,6 +72,6 @@ h2 {
     font-family: var(--font-bold);
 }
 
-section{
-    padding: 10px;
+section {
+    padding: 0.625rem;
 }

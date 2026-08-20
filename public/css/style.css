@@ -6,9 +6,9 @@ body {
 /* Navigatie */
 nav {
     background-color: var(--oranje);
-    height: 55px;
-    padding-left: var(--xs-space);
-    padding-right: var(--xs-space);
+    height: 3.438rem;
+    padding-left: var(--xxs-size);
+    padding-right: var(--xxs-size);
     color: var(--wit);
 
     display: flex;
@@ -23,19 +23,19 @@ nav {
     }
 
     img {
-        width: 100px;
+        width: 6.25rem;
     }
 
     .nav-links {
         display: flex;
         flex-direction: row;
-        gap: 5px;
+        gap: var(--xs-size);
     }
 
     .nav-rechts {
         display: flex;
         flex-direction: row;
-        gap: var(--d-space);
+        gap: var(--d-size);
     }
 
     a {
@@ -48,7 +48,7 @@ nav {
     display: none;
 }
 
-@media (width >=767px) {
+@media (width >= 47.938rem) {
     .mobile-nav {
         display: none;
     }
@@ -56,21 +56,21 @@ nav {
     .desktop-nav {
         display: flex;
         justify-content: space-between;
-        gap: 60px;
-        padding-left: var(--xs-space);
-        padding-right: var(--xs-space);
+        gap: 3.75rem;
+        padding-left: var(--xxs-size);
+        padding-right: var(--xxs-size);
 
         .desktop-nav-link {
             display: flex;
             align-items: center;
-            gap: var(--d-space);
+            gap: var(--d-size);
             font-size: medium;
 
         }
 
         /* fix vinden */
         .nav-rechts {
-            margin-right: 20px;
+            margin-right: var(--l-size);
         }
     }
 }
@@ -95,20 +95,20 @@ nav {
     .img-interacties {
         display: flex;
         flex-direction: row;
-        gap: 10px;
+        gap: var(--m-size);
 
         z-index: 1;
         position: absolute;
         right: 0;
-        margin: var(--d-space);
+        margin: var(--d-size);
 
         button {
-            width: 40px;
-            height: 40px;
+            width: 2.5rem;
+            height: 2.5rem;
             background-color: var(--wit);
             color: var(--blauw);
             border: none;
-            border-radius: var(--xs-space);
+            border-radius: var(--xxs-size);
             cursor: pointer;
 
             svg {
@@ -145,17 +145,17 @@ nav {
 
     .details-container {
         display: grid;
-        padding: var(--d-space);
+        padding: var(--d-size);
         grid-template-columns: repeat(2, auto);
         grid-template-rows: repeat(5, auto);
-        gap: 8px;
+        gap: var(--s-size);
 
         .straat {
             grid-column-start: 1;
             grid-row-start: 1;
 
             h1 {
-                font-size: 24px;
+                font-size: var(--xl-size);
             }
         }
 
@@ -174,7 +174,7 @@ nav {
 
             span {
                 font-family: var(--font-bold);
-                font-size: 20px;
+                font-size: var(--l-size);
             }
         }
 
@@ -228,7 +228,7 @@ nav {
             .label {
                 display: flex;
                 align-items: center;
-                margin-right: var(--d-space);
+                margin-right: var(--d-size);
 
                 svg {
                     color: var(--lichtgrijs);
@@ -245,29 +245,29 @@ nav {
 }
 
 .omschrijving {
-    padding: var(--d-space);
+    padding: var(--d-size);
 }
 
 .kenmerken {
-    padding: var(--d-space);
-    font-size: 16px;
+    padding: var(--d-size);
+    font-size: var(--d-size);
 
     .kenmerk-container {
         display: flex;
         flex-direction: column;
-        padding: var(--d-space);
-        border-radius: 5px;
+        padding: var(--d-size);
+        border-radius: var(--xs-size);
         width: auto;
-        border: 1px solid var(--lichtgrijs);
+        border: var(--d-border) solid var(--lichtgrijs);
         height: max-content;
-        gap: var(--d-space);
-        margin-bottom: var(--d-space);
+        gap: var(--d-size);
+        margin-bottom: var(--d-size);
 
         .kenmerken-titel {
             display: flex;
             flex-direction: row;
             align-items: center;
-            gap: 10px;
+            gap: var(--m-size);
         }
     }
 
@@ -278,37 +278,37 @@ nav {
     .energielabel {
         clip-path: polygon(0 0, calc(100% - .6rem) 0, 100% 50%, calc(100% - .6rem) 100%, 0 100%);
         width: min-content;
-        padding: 3px;
-        padding-right: 15px;
-        padding-left: 5px;
+        padding: 0.188rem;
+        padding-right: 0.938rem;
+        padding-left: var(--xs-size);
         color: var(--wit);
         background-color: #009342;
     }
 }
 
 .populariteit {
-    padding: var(--d-space);
-    font-size: 16px;
+    padding: var(--d-size);
+    font-size: var(--d-size);
 
     .populariteit-container {
         display: flex;
         flex-direction: row;
         justify-content: center;
-        padding: var(--d-space);
-        border-radius: 5px;
+        padding: var(--d-size);
+        border-radius: var(--xs-size);
         width: auto;
-        border: 1px solid var(--lichtgrijs);
+        border: var(--d-border) solid var(--lichtgrijs);
         height: max-content;
-        gap: var(--d-space);
-        margin-bottom: var(--d-space);
+        gap: var(--d-size);
+        margin-bottom: var(--d-size);
 
         .populariteit-stat {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            width: 100px;
-            border-right: 1px solid var(--lichtgrijs);
+            width: 6.25rem;
+            border-right: var(--d-border) solid var(--lichtgrijs);
 
             &:last-of-type {
                 border: none;
@@ -324,19 +324,19 @@ nav {
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
-    margin-bottom: var(--d-space);
+    margin-bottom: var(--d-size);
 
     & button {
-        padding: 10px;
+        padding: var(--m-size);
         width: 32%;
         color: var(--blauw);
         background-color: var(--wit);
-        border: 1px solid hsl(200, 100%, 31%);
-        border-radius: 4px;
+        border: var(--d-border) solid hsl(200, 100%, 31%);
+        border-radius: var(--xxs-size);
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 5px;
+        gap: var(--xs-size);
 
         &:nth-of-type(1) {
             background-color: var(--blauw);
@@ -346,31 +346,31 @@ nav {
 }
 
 .topPositie {
-    margin-bottom: var(--d-space);
+    margin-bottom: var(--d-size);
 
     & .topPositieLabel {
         color: var(--lichtgrijs);
         background-color: hsl(none 0% 90%);
-        border-radius: 4px;
-        line-height: 16px;
-        padding: 2px 8px;
+        border-radius: var(--xxs-size);
+        line-height: var(--d-size);
+        padding: 0.125rem var(--s-size);
     }
 }
 
 .topCardsContainer {
-    margin-top: var(--s-space);
+    margin-top: var(--s-size);
     display: flex;
     flex-direction: row;
     overflow-x: auto;
     width: 100%;
-    gap: var(--s-space);
+    gap: var(--s-size);
 
     & .topCardsList {
         display: grid;
-        grid-template-rows: 170px auto;
-        flex: 0 0 280px;
-        border: 1px solid var(--lichtgrijs);
-        border-radius: 4px;
+        grid-template-rows: 10.625rem auto;
+        flex: 0 0 17.5rem;
+        border: var(--d-border) solid var(--lichtgrijs);
+        border-radius: var(--xxs-size);
         overflow: hidden;
 
         & picture,
@@ -388,7 +388,7 @@ nav {
             grid-column: 1;
             align-self: end;
             z-index: 1;
-            padding: 12px;
+            padding: 0.75rem;
             color: white;
             font-size: medium;
             background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent);
@@ -398,7 +398,7 @@ nav {
             grid-row: 2;
             grid-column: 1;
             display: block;
-            padding: 12px;
+            padding: 0.75rem;
             color: var(--blauw);
             font-size: medium;
         }
@@ -410,12 +410,12 @@ nav {
     flex-direction: row;
     justify-content: space-between;
     height: auto;
-    padding: 10px;
+    padding: var(--m-size);
 
     & .resultatenInfo {
         display: flex;
         flex-direction: column;
-        gap: 5px;
+        gap: var(--xs-size);
 
         & p {
             margin: 0;
@@ -439,18 +439,18 @@ nav {
 }
 
 .listCard{
-    border: 1px solid var(--lichtgrijs);
-    margin-bottom: 20px;
+    border: var(--d-border) solid var(--lichtgrijs);
+    margin-bottom: var(--l-size);
 
 & .gallery {
     display: grid;
     grid-template-columns: repeat(2, auto);
-    gap: 5px;
+    gap: var(--xs-size);
     height: auto;
-    margin-bottom: var(--d-space);
+    margin-bottom: var(--d-size);
 
     & picture {
-        height: 135px;
+        height: 8.438rem;
         overflow: hidden;
         object-fit: cover;
     }
@@ -463,10 +463,10 @@ nav {
 
 & .list-details-container {
     display: grid;
-    padding: 10px;
+    padding: var(--m-size);
     grid-template-columns: repeat(2, auto);
     grid-template-rows: repeat(2, auto);
-    gap: 5px;
+    gap: var(--xs-size);
 
     & button {
         grid-column-start: 2;
@@ -492,8 +492,8 @@ nav {
         & .list-labels-container {
             display: flex;
             flex-direction: row;
-            gap: 10px;
-            margin-top: 5px;
+            gap: var(--m-size);
+            margin-top: var(--xs-size);
 
             & .list-label{
                 display: flex;
@@ -512,7 +512,7 @@ nav {
 
         display: flex;
         align-items: center;
-        gap: 5px;
+        gap: var(--xs-size);
 
         font-size: large;
         font-family: "Proxima Nova Semibold";
