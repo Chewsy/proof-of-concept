@@ -345,10 +345,10 @@ nav {
     }
 }
 
-.topPositie {
+.top-positie {
     margin-bottom: var(--d-size);
 
-    & .topPositieLabel {
+    & .top-positie-label {
         color: var(--lichtgrijs);
         background-color: hsl(none 0% 90%);
         border-radius: var(--xxs-size);
@@ -357,7 +357,7 @@ nav {
     }
 }
 
-.topCardsContainer {
+.top-cards-container {
     margin-top: var(--s-size);
     display: flex;
     flex-direction: row;
@@ -365,7 +365,7 @@ nav {
     width: 100%;
     gap: var(--s-size);
 
-    & .topCardsList {
+    & .top-cards-list {
         display: grid;
         grid-template-rows: 10.625rem auto;
         flex: 0 0 17.5rem;
@@ -405,14 +405,14 @@ nav {
     }
 }
 
-.resultatenInfoContainer {
+.resultaten-info-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     height: auto;
     padding: var(--m-size);
 
-    & .resultatenInfo {
+    & .resultaten-info {
         display: flex;
         flex-direction: column;
         gap: var(--xs-size);
@@ -438,7 +438,7 @@ nav {
     }
 }
 
-.listCard{
+.list-card{
     border: var(--d-border) solid var(--lichtgrijs);
     margin-bottom: var(--l-size);
 
@@ -478,13 +478,13 @@ nav {
         border: none;
     }
 
-    & .listDetails {
+    & .list-details {
         grid-column-start: 1;
         grid-row-start: 1;
         width: 100%;
         font-size: large;
 
-        & .listStraat {
+        & .list-straat {
             color: var(--blauw);
             font-family: "Proxima Nova Semibold";
         }
@@ -505,7 +505,7 @@ nav {
         }
     }
 
-    & .makelaarLogo {
+    & .makelaar-logo {
         grid-column: span 2 / span 2;
         grid-column-start: 1;
         grid-row-start: 2;

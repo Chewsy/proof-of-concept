@@ -18,14 +18,14 @@
     </button>
   </div>
 
-    <div class="topPositie">
-    <span class="topPositieLabel">Toppositie</span>
+    <div class="top-positie">
+    <span class="top-positie-label">Toppositie</span>
 
-    <div class="topCardsContainer">
+    <div class="top-cards-container">
       {% for house in houses limit:3 %}
-        <div class="topCardsList">
+        <div class="top-cards-list">
         
-{% include "partials/enhancedImage.liquid", house: house, limit: 1 %}
+{% include "partials/enhanced_image.liquid", house: house, limit: 1 %}
 
   <div class="details-container">
     <span>{{ house.street }} {{ house.house_nr }} {{ house.nr_addition }}</span>
@@ -38,8 +38,8 @@
   {% endfor %}
   </div>
 
-  <div class="resultatenInfoContainer">
-    <div class="resultatenInfo">
+  <div class="resultaten-info-container">
+    <div class="resultaten-info">
       {% comment %} Data hoeveelheid koopwoningen ophalen {% endcomment %}
       <p>86.685 koopwoningen</p>
       <p>in Nederland</p>
@@ -51,7 +51,7 @@
   </div>
 
  {% for house in houses limit: 5%}
-  {% render 'partials/listCard.liquid', house: house %}
+  {% render 'partials/list_card.liquid', house: house %}
     {% else %}
   {% endfor %}
 </section>

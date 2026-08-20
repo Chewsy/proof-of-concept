@@ -1,4 +1,4 @@
-<div class="listCard">
+<div class="list-card">
   <div class="gallery">
     {% for image in house.gallery limit: 3 %}
       <picture>
@@ -12,15 +12,15 @@
   <div class="list-details-container">
     <button
       class="interactie {% if favorieteHuizenIds contains house.id %}favoriet{% endif %}"
-      id="favorietKnop"
+      id="favoriet-knop"
       data-house-id="{{ house.id }}"
     >
 
       <img src="./assets/hart_icon.svg">
     </button>
 
-    <div class="listDetails">
-    <div class="listStraat">
+    <div class="list-details">
+    <div class="list-straat">
       <span>{{ house.street }}</span>
     </div>
     <div class="postcode-stad">
@@ -79,7 +79,7 @@
       </div>
       </div>
       </div>
-      <a class="makelaarLogo">
+      <a class="makelaar-logo">
         <img src="https://cloud.funda.nl/valentina_media/212/684/910.jpg" alt="Your House Makelaardij" width="50" height="50">
         {{ house.agent }}
       </a>
