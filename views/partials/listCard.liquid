@@ -1,7 +1,7 @@
 <div class="listCard">
 
 {% for image in house.gallery limit:1%}
-  {% include "partials/enhancedImage.liquid", image: image %}
+  {% include "partials/enhancedImage.liquid", house: house, limit: 5 %}
 {% endfor %}
 
   <div class="details-container">

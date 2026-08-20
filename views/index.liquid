@@ -21,20 +21,21 @@
     <div class="topPositie">
     <span class="topPositieLabel">Toppositie</span>
 
-    <div class="topCardsList">
+    <div class="topCardsContainer">
       {% for house in houses limit:3 %}
+        <div class="topCardsList">
         
-{% include "partials/enhancedImage.liquid", image: house.poster_image %}
+{% include "partials/enhancedImage.liquid", house: house, limit: 1 %}
 
   <div class="details-container">
-    <span>{{ house.street }}</span>
+    <span>{{ house.street }} {{ house.house_nr }} {{ house.nr_addition }}</span>
       <div class="stad-prijs">
-        <span>{{ house.city }}</span>
-        <span>{{ house.customPrice }}</span>
+        <span>{{ house.city }} €{{ house.price }} k.k</span>
   </div>
-      <span>{{ house.agent }}</span>
   </div>
-{% endfor %}
+        <span class="makelaar">{{ house.agent }}</span>
+  </div>
+  {% endfor %}
   </div>
 
   <div class="resultatenInfoContainer">
@@ -49,7 +50,7 @@
     </button>
   </div>
 
- {% for house in houses limit: 20%}
+ {% for house in houses limit: 1%}
   {% render 'partials/listCard.liquid', house: house %}
     {% else %}
   {% endfor %}

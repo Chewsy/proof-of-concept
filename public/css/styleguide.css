@@ -25,7 +25,7 @@
     --wit: hsl(0, 0%, 100%);
     --gebroken-wit: hsl(33, 56%, 94%);
     --lichtblauw: hsl(201, 100%, 95%);
-    --blauw: hsl(205, 69%, 51%);
+    --blauw: hsl(200 100% 31%);
 
     /* Secundaire kleuren */
     --donkergrijs: hsl(0, 0%, 20%);
@@ -44,7 +44,8 @@
     --font-light: "Proxima Nova Light";
 
     /* Spacing & DRY waardes */
-    --d-space: 15px;
+    --d-space: 16px;
+    --s-space: 8px;
     --xs-space: 4px;
 }
 
