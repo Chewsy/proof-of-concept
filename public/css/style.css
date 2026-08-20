@@ -373,7 +373,7 @@ nav {
         border-radius: 4px;
         overflow: hidden;
 
-        & picture, 
+        & picture,
         & img {
             grid-row: 1;
             grid-column: 1;
@@ -402,5 +402,38 @@ nav {
             color: var(--blauw);
             font-size: medium;
         }
+    }
+}
+
+.resultatenInfoContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: auto;
+    padding: 10px;
+
+    & .resultatenInfo {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        & p {
+            margin: 0;
+            padding: 0;
+
+            &:nth-of-type(1) {
+                font-family: "Proxima Nova Semibold";
+            }
+        }
+
+    }
+
+    & button {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background-color: transparent;
+        border: none;
+        color: var(--blauw);
     }
 }
