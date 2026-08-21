@@ -534,6 +534,10 @@ nav {
     height: 100dvh;
     border: none;
     padding: var(--d-size);
+
+    & fieldset {
+        border: none;
+    }
 }
 
 .popover-space-between {
@@ -542,7 +546,8 @@ nav {
     justify-content: space-between;
 }
 
-.filter-aanbod, .filter-woningtype {
+.filter-aanbod,
+.filter-woningtype {
     display: flex;
     flex-direction: column;
 }
@@ -569,6 +574,6 @@ nav {
     }
 }
 
-.checkbox-legend{
+.checkbox-legend {
     display: none;
 }
