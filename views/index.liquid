@@ -26,7 +26,7 @@
     </div>
         <hr>
 
-          <fieldset class="popover-aanbod">
+          <fieldset class="filter-aanbod">
     <legend>Aanbodtype</legend>
 
     <div>
@@ -46,6 +46,59 @@
   <input type="number" placeholder="Tot € Geen max" />
   </div>
 
+  <hr>
+
+<div class="filter-woningtype">
+    <span>Woningtype</span>
+    
+    {% render 'partials/woningtype.liquid', 
+      legend: 'Woonhuis', 
+      label: 'Woonhuis' 
+    %}
+
+    {% render 'partials/woningtype.liquid', 
+      legend: 'Appartement', 
+      label: 'appartement' 
+    %}
+
+    {% render 'partials/woningtype.liquid', 
+      legend: 'Parkeergelegenheid', 
+      label: 'parkeergelegenheid' 
+    %}
+
+    {% render 'partials/woningtype.liquid', 
+      legend: 'Bouwgrond', 
+      label: 'bouwgrond' 
+    %}
+
+    {% render 'partials/woningtype.liquid', 
+      legend: 'Opslagruimte', 
+      label: 'opslagruimte' 
+    %}
+
+    {% render 'partials/woningtype.liquid', 
+      legend: 'Berging', 
+      label: 'berging' 
+    %}
+
+    {% render 'partials/woningtype.liquid', 
+      legend: 'Ligplaats', 
+      label: 'ligplaats' 
+    %}
+    
+    {% render 'partials/woningtype.liquid', 
+      legend: 'Onderstuk', 
+      label: 'onderstuk' 
+    %}
+
+    {% render 'partials/woningtype.liquid', 
+      legend: 'Standplaats', 
+      label: 'standplaats' 
+    %}
+
+  </div>
+
+  {% comment %} einde popover {% endcomment %}
     </div>
 
     <div class="top-positie">
