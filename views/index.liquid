@@ -21,13 +21,13 @@
   <div class="filter-popover-container" popover id="filter-popover">
 
     <div class="popover-space-between">
-      <span>Filter</span>
+      <span class="filter-categorie">Filter</span>
       <button>Sluiten</button>
     </div>
         <hr>
 
           <fieldset class="filter-aanbod">
-    <legend>Aanbodtype</legend>
+    <legend class="filter-categorie">Aanbodtype</legend>
 
     <div>
       <input type="radio" id="koop" name="aanbodtype" value="koop" checked />
@@ -49,7 +49,7 @@
   <hr>
 
 <div class="filter-woningtype">
-    <span>Woningtype</span>
+    <span class="filter-categorie">Woningtype</span>
     
     {% render 'partials/woningtype.liquid', 
       legend: 'Woonhuis', 
@@ -99,7 +99,7 @@
   </div>
 
   <div class="filter-woningtype">
-    <span>Soort bouw</span>
+    <span class="filter-categorie">Soort bouw</span>
 
         {% render 'partials/woningtype.liquid', 
       legend: 'Nieuwbouw', 
