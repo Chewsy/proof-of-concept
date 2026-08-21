@@ -551,13 +551,6 @@ nav {
         padding: 0;
     }
 
-    & input {
-        border: var(--d-border) solid var(--lichtgrijs);
-        border-radius: var(--xxs-size);
-        padding: var(--s-size);
-
-    }
-
     & .sluiten {
         display: flex;
         flex-direction: row;
@@ -581,6 +574,15 @@ nav {
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: var(--s-size);
+
+    & input[type="checkbox" i] {
+        appearance: none;
+        width: var(--l-size);
+        height: var(--l-size);
+        border: var(--d-border) solid var(--blauw);
+        border-radius: var(--xxs-size);
+        cursor: pointer;
+    }
 }
 
 .filter-aanbod,
@@ -605,6 +607,9 @@ nav {
     & input {
         grid-column-start: 2;
         grid-row-start: 2;
+        border: var(--d-border) solid var(--lichtgrijs);
+        border-radius: var(--xxs-size);
+        padding: var(--s-size);
 
         &:first-of-type {
             grid-column-start: 1;
@@ -630,7 +635,7 @@ nav {
     display: none;
 }
 
-input[type="radio"] {
+input[type="radio" i] {
     width: var(--xl-size);
     height: var(--xl-size);
     border: var(--xl-border) solid var(--blauw);
