@@ -547,8 +547,8 @@ nav {
     .filter-categorie {
         margin-bottom: var(--s-size);
         font-family: var(--font-bold);
-            margin: 0;
-            padding: 0;
+        margin: 0;
+        padding: 0;
     }
 
     & input {
@@ -628,4 +628,11 @@ nav {
 
 .checkbox-legend {
     display: none;
+}
+
+input[type="radio"] {
+    width: var(--xl-size);
+    height: var(--xl-size);
+    border: var(--xl-border) solid var(--blauw);
+    cursor: pointer;
 }
