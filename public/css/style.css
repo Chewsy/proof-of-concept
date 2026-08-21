@@ -574,6 +574,19 @@ nav {
     }
 }
 
+.filter-toon-button {
+        padding: var(--m-size);
+        width: 100%;
+        background-color: var(--blauw);
+        color: var(--wit);
+        border: var(--d-border) solid hsl(200, 100%, 31%);
+        border-radius: var(--xxs-size);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: var(--xs-size);
+    }
+
 .checkbox-legend {
     display: none;
 }
