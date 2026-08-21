@@ -548,6 +548,13 @@ nav {
         margin-bottom: var(--s-size);
         font-family: var(--font-bold);
     }
+
+    & input{
+        border: var(--d-border) solid var(--lichtgrijs);
+        border-radius: var(--xxs-size);
+        padding: var(--s-size);
+
+    }
 }
 
 .popover-space-between {
@@ -578,6 +585,8 @@ nav {
     & label {
         grid-column-start: 1;
         grid-row-start: 1;
+
+        font-family: var(--font-bold);
     }
 
     & input {
