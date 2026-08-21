@@ -48,7 +48,7 @@ nav {
     display: none;
 }
 
-@media (width >= 47.938rem) {
+@media (width >=47.938rem) {
     .mobile-nav {
         display: none;
     }
@@ -438,85 +438,105 @@ nav {
     }
 }
 
-.list-card{
+.list-card {
     border: var(--d-border) solid var(--lichtgrijs);
     margin-bottom: var(--l-size);
 
-& .gallery {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    gap: var(--xs-size);
-    height: auto;
-    margin-bottom: var(--d-size);
+    & .gallery {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        gap: var(--xs-size);
+        height: auto;
+        margin-bottom: var(--d-size);
 
-    & picture {
-        height: 8.438rem;
-        overflow: hidden;
-        object-fit: cover;
-    }
-
-    & picture:nth-of-type(1) {
-        grid-column: span 2 / span 2;
-        height: 100%;
-    }
-}
-
-& .list-details-container {
-    display: grid;
-    padding: var(--m-size);
-    grid-template-columns: repeat(2, auto);
-    grid-template-rows: repeat(2, auto);
-    gap: var(--xs-size);
-
-    & button {
-        grid-column-start: 2;
-        grid-row-start: 1;
-        align-self: start;
-        justify-self: end;
-
-        background-color: transparent;
-        border: none;
-    }
-
-    & .list-details {
-        grid-column-start: 1;
-        grid-row-start: 1;
-        width: 100%;
-        font-size: large;
-
-        & .list-straat {
-            color: var(--blauw);
-            font-family: "Proxima Nova Semibold";
+        & picture {
+            height: 8.438rem;
+            overflow: hidden;
+            object-fit: cover;
         }
 
-        & .list-labels-container {
-            display: flex;
-            flex-direction: row;
-            gap: var(--m-size);
-            margin-top: var(--xs-size);
-
-            & .list-label{
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                width: auto;
-                color: var(--donkergrijs);
-            }
+        & picture:nth-of-type(1) {
+            grid-column: span 2 / span 2;
+            height: 100%;
         }
     }
 
-    & .makelaar-logo {
-        grid-column: span 2 / span 2;
-        grid-column-start: 1;
-        grid-row-start: 2;
-
-        display: flex;
-        align-items: center;
+    & .list-details-container {
+        display: grid;
+        padding: var(--m-size);
+        grid-template-columns: repeat(2, auto);
+        grid-template-rows: repeat(2, auto);
         gap: var(--xs-size);
 
-        font-size: large;
-        font-family: "Proxima Nova Semibold";
-        color: var(--blauw);
+        & button {
+            grid-column-start: 2;
+            grid-row-start: 1;
+            align-self: start;
+            justify-self: end;
+
+            background-color: transparent;
+            border: none;
+        }
+
+        & .list-details {
+            grid-column-start: 1;
+            grid-row-start: 1;
+            width: 100%;
+            font-size: large;
+
+            & .list-straat {
+                color: var(--blauw);
+                font-family: "Proxima Nova Semibold";
+            }
+
+            & .list-labels-container {
+                display: flex;
+                flex-direction: row;
+                gap: var(--m-size);
+                margin-top: var(--xs-size);
+
+                & .list-label {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    width: auto;
+                    color: var(--donkergrijs);
+                }
+            }
+        }
+
+        & .makelaar-logo {
+            grid-column: span 2 / span 2;
+            grid-column-start: 1;
+            grid-row-start: 2;
+
+            display: flex;
+            align-items: center;
+            gap: var(--xs-size);
+
+            font-size: large;
+            font-family: "Proxima Nova Semibold";
+            color: var(--blauw);
+        }
     }
 }
+
+filter-popover-container [popover] {
+        position: fixed;
+        inset: 0;
+        margin: auto;
+        padding: 0.25em;
+        overflow: auto;
+    
+}
+
+[popover]:popover-open {
+    position: absolute;
+    inset: unset;
+    margin: 0;
+
+    background-color: var(--wit);
+    width: 100dvw;
+    height: 100dvh;
+    border: none;
 }
