@@ -546,3 +546,25 @@ nav {
     display: flex;
     flex-direction: column;
 }
+
+.filter-prijs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 5px;
+
+    & label {
+        grid-column-start: 1;
+        grid-row-start: 1;
+    }
+
+    & input {
+        grid-column-start: 2;
+        grid-row-start: 2;
+
+        &:first-of-type {
+            grid-column-start: 1;
+            grid-row-start: 2;
+        }
+    }
+}
