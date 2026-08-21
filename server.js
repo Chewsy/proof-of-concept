@@ -90,3 +90,25 @@ app.get('/house/:city/:street/:house_slug/media/fotos', async function (request,
     house: house
   });
 });
+
+// Deze functie wordt dus uitgevoerd als de browser naar /goedkoopste gaat
+app.get('/goedkoopste', async function (request, response) {
+
+  // Haal alle huizen uit de WHOIS API op, gesorteerd op prijs
+  const params = {
+    // Sorteer op prijs
+    'sort': (request.query.sorteer == 'goedkoopste' ? 'price' : 'price'),
+
+    // Geef aan welke data je per huis wil terugkrijgen
+    'fields': 'price',
+  }
+
+  // Response oplsaan in variabele
+  const goedkoopsteResponse = await fetch('https://fdnd-agency.directus.app/items/f_houses/?' + new URLSearchParams(params));
+
+  // Response omzetten naar JSON
+  const goedkoopsteResponseJSON = await goedkoopsteResponse.json();
+
+  // responseJSON renderen naar de pagina
+  response.render('index.liquid', { houses: goedkoopsteResponseJSON.data });
+});
