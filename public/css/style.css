@@ -629,6 +629,7 @@ nav {
     align-items: center;
     justify-content: center;
     gap: var(--xs-size);
+    font-size: large;
 }
 
 .checkbox-legend {
