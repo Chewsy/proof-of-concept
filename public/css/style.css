@@ -659,16 +659,19 @@ input[type="radio" i] {
     position-area: bottom center;
     width: 100dvw;
 
+    border: var(--s-border) solid var(--lichtgrijs);
+
+    & a {
+        font-size: medium;
+        color: var(--donkergrijs);
+        text-decoration: none;
+
+        padding: var(--s-size);
+        border-bottom: var(--s-border) solid var(--lichtgrijs);
+    }
 }
 
 .sorteer-popover-container [popover] :popover-open {
     display: flex;
     flex-direction: column;
-
-    height: max-content;
-    border: var(--d-border) solid var(--lichtgrijs);
-    padding: var(--d-size);
-
-    font-size: medium;
-    color: var(--donkergrijs);
-    }
+}
