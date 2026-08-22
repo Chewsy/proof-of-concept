@@ -526,7 +526,7 @@ nav {
     overflow: auto;
 }
 
-[popover]:popover-open {
+.filter-popover-container[popover]:popover-open {
     display: flex;
     flex-direction: column;
 
@@ -655,12 +655,12 @@ input[type="radio" i] {
     gap: var(--xs-size);
 }
 
-.sorteer-popover[popover]:popover-open {
+.sorteer-popover [popover]:popover-open {
     display: flex;
     flex-direction: column;
 
     width: 100%;
-    height: 100%;
+    height: max-content;
     border: var(--d-border) solid var(--lichtgrijs);
     padding: var(--d-size);
 
