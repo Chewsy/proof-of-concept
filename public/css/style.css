@@ -535,7 +535,7 @@ nav {
     border: none;
     padding: var(--d-size);
 
-    font-size: x-large;
+    font-size: medium;
     color: var(--donkergrijs);
 
     justify-content: space-evenly;
@@ -558,7 +558,7 @@ nav {
         background-color: transparent;
         border: none;
         color: var(--blauw);
-        font-size: x-large;
+        font-size: medium;
     }
 }
 
