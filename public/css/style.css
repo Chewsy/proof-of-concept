@@ -657,40 +657,18 @@ input[type="radio" i] {
 
 .sorteer-popover-container {
     position-area: bottom center;
+    width: 100dvw;
+
 }
 
-.sorteer-popover [popover]:popover-open {
+.sorteer-popover-container [popover] :popover-open {
     display: flex;
     flex-direction: column;
 
-    width: 100%;
     height: max-content;
     border: var(--d-border) solid var(--lichtgrijs);
     padding: var(--d-size);
 
     font-size: medium;
     color: var(--donkergrijs);
-
-    /* justify-content: space-evenly;
-
-    & fieldset {
-        border: none;
     }
-
-    .filter-categorie {
-        margin-bottom: var(--s-size);
-        font-family: var(--font-bold);
-        margin: 0;
-        padding: 0;
-    }
-
-    & .sluiten {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        background-color: transparent;
-        border: none;
-        color: var(--blauw);
-        font-size: x-large;
-    } */
-}
