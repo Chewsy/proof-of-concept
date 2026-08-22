@@ -655,6 +655,10 @@ input[type="radio" i] {
     gap: var(--xs-size);
 }
 
+.sorteer-popover-container {
+    position-area: bottom center;
+}
+
 .sorteer-popover [popover]:popover-open {
     display: flex;
     flex-direction: column;
