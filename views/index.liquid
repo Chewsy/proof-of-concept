@@ -12,107 +12,75 @@
       <span>Bewaar</span>
     </button>
 
-        <button>
+    <button>
       <img src="./assets/kaart_icon.svg" alt="Hart icoon">
       <span>Kaart</span>
     </button>
   </div>
 
   <div class="filter-popover-container" popover id="filter-popover">
-
     <div class="popover-space-between">
       <span class="filter-categorie">Filter</span>
       <button class="sluiten" popovertarget="filter-popover" popovertargetaction="hide">Sluiten</button>
     </div>
-        <hr>
+    <hr>
 
-          <fieldset class="filter-aanbod">
-    <legend class="filter-categorie">Aanbodtype</legend>
+    <fieldset class="filter-aanbod">
+      <legend class="filter-categorie">Aanbodtype</legend>
 
-    <div>
-      <input type="radio" id="koop" name="aanbodtype" value="koop" checked />
-      <label for="koop">Koop</label>
+      <div>
+        <input type="radio" id="koop" name="aanbodtype" value="koop" checked />
+        <label for="koop">Koop</label>
+      </div>
+
+      <div>
+        <input type="radio" id="huur" name="aanbodtype" value="huur" />
+        <label for="huur">Huur</label>
+      </div>
+    </fieldset>
+
+    <div class="filter-prijs">
+      <label for="prijs">Prijs</label>
+      <input type="number" id="prijs-van" placeholder="Van €0" />
+      <input type="number" id="prijs-tot" placeholder="Tot € Geen max" />
     </div>
 
-    <div>
-      <input type="radio" id="huur" name="aanbodtype" value="huur" />
-      <label for="huur">Huur</label>
+    <hr>
+
+    <div class="filter-woningtype">
+      <span class="filter-categorie">Woningtype</span>
+
+      {% render 'partials/woningtype.liquid', legend: 'Woonhuis', label: 'Woonhuis' %}
+
+      {% render 'partials/woningtype.liquid', legend: 'Appartement', label: 'appartement' %}
+
+      {% render 'partials/woningtype.liquid', legend: 'Parkeergelegenheid', label: 'parkeergelegenheid' %}
+
+      {% render 'partials/woningtype.liquid', legend: 'Bouwgrond', label: 'bouwgrond' %}
+
+      {% render 'partials/woningtype.liquid', legend: 'Opslagruimte', label: 'opslagruimte' %}
+
+      {% render 'partials/woningtype.liquid', legend: 'Berging', label: 'berging' %}
+
+      {% render 'partials/woningtype.liquid', legend: 'Ligplaats', label: 'ligplaats' %}
+
+      {% render 'partials/woningtype.liquid', legend: 'Onderstuk', label: 'onderstuk' %}
+
+      {% render 'partials/woningtype.liquid', legend: 'Standplaats', label: 'standplaats' %}
     </div>
-  </fieldset>
 
-  <div class="filter-prijs">
-    <label for="prijs">Prijs</label>
-  <input type="number" id="prijs-van" placeholder="Van €0" />
-  <input type="number" id="prijs-tot" placeholder="Tot € Geen max" />
-  </div>
+    <div class="filter-woningtype">
+      <span class="filter-categorie">Soort bouw</span>
 
-  <hr>
-
-<div class="filter-woningtype">
-    <span class="filter-categorie">Woningtype</span>
-    
-    {% render 'partials/woningtype.liquid', 
-      legend: 'Woonhuis', 
-      label: 'Woonhuis' 
-    %}
-
-    {% render 'partials/woningtype.liquid', 
-      legend: 'Appartement', 
-      label: 'appartement' 
-    %}
-
-    {% render 'partials/woningtype.liquid', 
-      legend: 'Parkeergelegenheid', 
-      label: 'parkeergelegenheid' 
-    %}
-
-    {% render 'partials/woningtype.liquid', 
-      legend: 'Bouwgrond', 
-      label: 'bouwgrond' 
-    %}
-
-    {% render 'partials/woningtype.liquid', 
-      legend: 'Opslagruimte', 
-      label: 'opslagruimte' 
-    %}
-
-    {% render 'partials/woningtype.liquid', 
-      legend: 'Berging', 
-      label: 'berging' 
-    %}
-
-    {% render 'partials/woningtype.liquid', 
-      legend: 'Ligplaats', 
-      label: 'ligplaats' 
-    %}
-    
-    {% render 'partials/woningtype.liquid', 
-      legend: 'Onderstuk', 
-      label: 'onderstuk' 
-    %}
-
-    {% render 'partials/woningtype.liquid', 
-      legend: 'Standplaats', 
-      label: 'standplaats' 
-    %}
-
-  </div>
-
-  <div class="filter-woningtype">
-    <span class="filter-categorie">Soort bouw</span>
-
-        {% render 'partials/woningtype.liquid', 
-      legend: 'Nieuwbouw', 
-      label: 'nieuwbouw' 
-    %}
+      {% render 'partials/woningtype.liquid', legend: 'Nieuwbouw', label: 'nieuwbouw' %}
     </div>
 
     <button class="filter-toon-button">Toon 86.685 resultaten</button>
 
-  {% comment %} einde popover {% endcomment %}
-    </div>
+    {% comment %} einde popover {% endcomment %}
+  </div>
 
-    <div class="top-positie">
+  <div class="top-positie">
     <span class="top-positie-label">Toppositie</span>
 
     <div class="top-cards-container">
@@ -143,7 +111,7 @@
       Sorteer
     </button>
     <div class="sorteer-popover-container" popover id="sorteer-popover">
-
+      <a href="/goedkoopste">Prijs - laag naar hoog</a>
     </div>
   </div>
 
@@ -153,4 +121,5 @@
   {% endfor %}
 </section>
 
-{% render 'partials/foot.liquid' %}
+
+  {% render 'partials/foot.liquid' %}
