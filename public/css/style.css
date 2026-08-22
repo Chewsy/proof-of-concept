@@ -644,6 +644,17 @@ input[type="radio" i] {
 }
 
 /* sorteer-popover */
+
+.resultaten-info-container button {
+    color: var(--blauw);
+    background-color: var(--wit);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--xs-size);
+}
+
 .sorteer-popover[popover]:popover-open {
     display: flex;
     flex-direction: column;
