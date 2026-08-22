@@ -668,6 +668,11 @@ input[type="radio" i] {
 
         padding: var(--s-size);
         border-bottom: var(--s-border) solid var(--lichtgrijs);
+
+        /* Simulatie dat "relevantie" optie de default/active is (on page loading) */
+        &:first-child{
+            background-color: hsl(200 100% 95%);
+        }
     }
 }
 
