@@ -96,21 +96,28 @@ app.get('/goedkoopste', async function (request, response) {
 
   // Haal alle huizen uit de WHOIS API op, gesorteerd op prijs
   const params = {
-    // Sorteer op prijs
-    'sort': (request.query.sorteer == 'goedkoopste' ? 'price' : 'price'),
-
-    // Geef aan welke data je per huis wil terugkrijgen
-    'fields': 'price',
+    'sort': 'price',
+    'fields': '*.*',
   }
 
-  // Response oplsaan in variabele
+  // Response opslaan in variabele
   const goedkoopsteResponse = await fetch('https://fdnd-agency.directus.app/items/f_houses/?' + new URLSearchParams(params));
 
   // Response omzetten naar JSON
   const goedkoopsteResponseJSON = await goedkoopsteResponse.json();
 
+  // Haal alle afbeeldingen op net zoals in de index
+  const houses = goedkoopsteResponseJSON.data.map(house => {
+    house.poster_image = extractFileId(house.poster_image)
+    house.gallery = Array.isArray(house.gallery)
+      ? house.gallery.map(extractFileId).filter(Boolean)
+      : []
+    house.thumbnail = house.gallery[0] || house.poster_image
+    return house
+  })
+
   // responseJSON renderen naar de pagina
-  response.render('index.liquid', { houses: goedkoopsteResponseJSON.data });
+  response.render('index.liquid', { houses: houses });
 });
 
 // Deze functie wordt dus uitgevoerd als de browser naar /duurste gaat
@@ -118,19 +125,26 @@ app.get('/duurste', async function (request, response) {
 
   // Haal alle huizen uit de WHOIS API op, gesorteerd op prijs
   const params = {
-    // Sorteer op prijs
-    'sort': (request.query.sorteer == 'duurste' ? 'price' : '-price'),
-
-    // Geef aan welke data je per huis wil terugkrijgen
-    'fields': 'price',
+    'sort': '-price',
+    'fields': '*.*',
   }
 
-  // Response oplsaan in variabele
+  // Response opslaan in variabele
   const duursteResponse = await fetch('https://fdnd-agency.directus.app/items/f_houses/?' + new URLSearchParams(params));
 
   // Response omzetten naar JSON
   const duursteResponseJSON = await duursteResponse.json();
 
+  // Haal alle afbeeldingen op net zoals in de index
+  const houses = duursteResponseJSON.data.map(house => {
+    house.poster_image = extractFileId(house.poster_image)
+    house.gallery = Array.isArray(house.gallery)
+      ? house.gallery.map(extractFileId).filter(Boolean)
+      : []
+    house.thumbnail = house.gallery[0] || house.poster_image
+    return house
+  })
+
   // responseJSON renderen naar de pagina
-  response.render('index.liquid', { houses: duursteResponseJSON.data });
+  response.render('index.liquid', { houses: houses });
 });
