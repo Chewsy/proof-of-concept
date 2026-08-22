@@ -642,7 +642,7 @@ input[type="radio" i] {
 }
 
 /* sorteer-popover */
-.sorteer-popover [popover]:popover-open {
+.sorteer-popover[popover]:popover-open {
     display: flex;
     flex-direction: column;
 
