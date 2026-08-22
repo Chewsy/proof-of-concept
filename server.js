@@ -112,3 +112,25 @@ app.get('/goedkoopste', async function (request, response) {
   // responseJSON renderen naar de pagina
   response.render('index.liquid', { houses: goedkoopsteResponseJSON.data });
 });
+
+// Deze functie wordt dus uitgevoerd als de browser naar /duurste gaat
+app.get('/duurste', async function (request, response) {
+
+  // Haal alle huizen uit de WHOIS API op, gesorteerd op prijs
+  const params = {
+    // Sorteer op prijs
+    'sort': (request.query.sorteer == 'duurste' ? 'price' : '-price'),
+
+    // Geef aan welke data je per huis wil terugkrijgen
+    'fields': 'price',
+  }
+
+  // Response oplsaan in variabele
+  const duursteResponse = await fetch('https://fdnd-agency.directus.app/items/f_houses/?' + new URLSearchParams(params));
+
+  // Response omzetten naar JSON
+  const duursteResponseJSON = await duursteResponse.json();
+
+  // responseJSON renderen naar de pagina
+  response.render('index.liquid', { houses: duursteResponseJSON.data });
+});
