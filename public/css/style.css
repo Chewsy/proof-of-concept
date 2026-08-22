@@ -526,7 +526,7 @@ nav {
     overflow: auto;
 }
 
-.filter-popover [popover]:popover-open {
+[popover]:popover-open {
     display: flex;
     flex-direction: column;
 
@@ -535,6 +535,7 @@ nav {
     border: none;
     padding: var(--d-size);
 
+    font-size: x-large;
     color: var(--donkergrijs);
 
     justify-content: space-evenly;
@@ -557,6 +558,7 @@ nav {
         background-color: transparent;
         border: none;
         color: var(--blauw);
+        font-size: x-large;
     }
 }
 
