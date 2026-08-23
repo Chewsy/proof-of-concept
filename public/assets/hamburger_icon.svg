@@ -1,0 +1,11 @@
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="#fff"
+          role="presentation"
+          viewBox="0 0 48 48"
+          aria-label="Menu"
+        >
+          <path d="M7.5 12.5h30a1.5 1.5 0 010 3h-30a1.5 1.5 0 010-3zm0 10h33a1.5 1.5 0 010 3h-33a1.5 1.5 0 010-3zm0 10h22a1.5 1.5 0 010 3h-22a1.5 1.5 0 010-3z"></path>
+        </svg>
