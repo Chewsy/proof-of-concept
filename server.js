@@ -57,7 +57,7 @@ app.get('/', async function (request, response) {
   //  Maakt een object lijst van alle huizen
   const houses = housesResponseJson.data.map(house => {
     const customEnergielabel = ['A++++', 'A+++', 'A++', 'A+', 'B', 'C', 'D', 'E', 'F', 'G']
-    
+
     house.customEnergielabel = customEnergielabel[Math.floor(Math.random() * customEnergielabel.length)]
     house.poster_image = extractFileId(house.poster_image)
     house.gallery = Array.isArray(house.gallery)
@@ -243,6 +243,51 @@ app.get('/huis/:id', async function (request, response) {
 
   // Exporteer data naar de index
   response.render('huis.liquid', {
+    houses: houses,
+    favorieteHuizenIds: favorieteHuizenIds,
+  });
+});
+
+
+
+
+
+// Deze functie wordt dus uitgevoerd als ik op de favorieten knop klik in de nav
+app.get('/favorieten', async function (request, response) {
+
+  // https://fdnd-agency.directus.app/items/f_houses
+  const housesResponse = await fetch(baseURL + "houses?fields=*.*");
+  const housesResponseJson = await housesResponse.json();
+
+  const listResponse = await fetch(baseURL + 'list/20');
+  const listResponseJson = await listResponse.json();
+
+  let favorieteHuizenIds = [];
+
+  if (
+    listResponseJson.data &&
+    listResponseJson.data.houses
+  ) {
+    favorieteHuizenIds = listResponseJson.data.houses;
+  }
+
+  //  Maakt een object lijst van alle huizen
+  const houses = housesResponseJson.data
+    .filter(house => favorieteHuizenIds.includes(Number(house.id)))
+    .map(house => {
+      const customEnergielabel = ['A++++', 'A+++', 'A++', 'A+', 'B', 'C', 'D', 'E', 'F', 'G']
+
+      house.customEnergielabel = customEnergielabel[Math.floor(Math.random() * customEnergielabel.length)]
+      house.poster_image = extractFileId(house.poster_image)
+      house.gallery = Array.isArray(house.gallery)
+        ? house.gallery.map(extractFileId).filter(Boolean)
+        : []
+      house.thumbnail = house.gallery[0] || house.poster_image
+      return house
+    })
+
+  // Exporteer data naar de index
+  response.render('favorieten.liquid', {
     houses: houses,
     favorieteHuizenIds: favorieteHuizenIds
   });
