@@ -56,6 +56,9 @@ app.get('/', async function (request, response) {
 
   //  Maakt een object lijst van alle huizen
   const houses = housesResponseJson.data.map(house => {
+    const customEnergielabel = ['A++++', 'A+++', 'A++', 'A+', 'B', 'C', 'D', 'E', 'F', 'G']
+    
+    house.customEnergielabel = customEnergielabel[Math.floor(Math.random() * customEnergielabel.length)]
     house.poster_image = extractFileId(house.poster_image)
     house.gallery = Array.isArray(house.gallery)
       ? house.gallery.map(extractFileId).filter(Boolean)
