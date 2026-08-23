@@ -85,43 +85,43 @@
 
     <div class="top-cards-container">
       {% for house in houses limit:3 %}
-        <div class="top-cards-list">
-        
-{% include "partials/enhanced_image.liquid", house: house, limit: 1 %}
+      <div class="top-cards-list">
 
-  <div class="details-container">
-    <span>{{ house.street }} {{ house.house_nr }} {{ house.nr_addition }}</span>
-      <div class="stad-prijs">
-        <span>{{ house.city }} €{{ house.priceFormatted }} k.k</span>
-  </div>
-  </div>
+        {% include "partials/enhanced_image.liquid", house: house, limit: 1 %}
+
+        <div class="details-container">
+          <span>{{ house.street }} {{ house.house_nr }} {{ house.nr_addition }}</span>
+          <div class="stad-prijs">
+            <span>{{ house.city }} €{{ house.priceFormatted }} k.k</span>
+          </div>
+        </div>
         <span class="makelaar">{{ house.agent }}</span>
-  </div>
-  {% endfor %}
-  </div>
-
-  <div class="resultaten-info-container">
-    <div class="resultaten-info">
-      {% comment %} Data hoeveelheid koopwoningen ophalen {% endcomment %}
-      <p>86.685 koopwoningen</p>
-      <p>in Nederland</p>
+      </div>
+      {% endfor %}
     </div>
-    <button class="sorteer" popovertarget="sorteer-popover">
-      <img src="./assets/sorteer_icon.svg" alt="Sorteer icoon">
-      Sorteer
-    </button>
-    <div class="sorteer-popover-container" popover id="sorteer-popover">
-            <a href="/">✓ Relevantie</a>
-      <a href="/goedkoopste">Prijs - laag naar hoog</a>
-      <a href="/duurste">Prijs - hoog naar laag</a>
-    </div>
-  </div>
 
- {% for house in houses limit: 5%}
-  {% render 'partials/list_card.liquid', house: house %}
+    <div class="resultaten-info-container">
+      <div class="resultaten-info">
+        {% comment %} Data hoeveelheid koopwoningen ophalen {% endcomment %}
+        <p>86.685 koopwoningen</p>
+        <p>in Nederland</p>
+      </div>
+      <button class="sorteer" popovertarget="sorteer-popover">
+        <img src="./assets/sorteer_icon.svg" alt="Sorteer icoon">
+        Sorteer
+      </button>
+      <div class="sorteer-popover-container" popover id="sorteer-popover">
+        <a href="/">✓ Relevantie</a>
+        <a href="/goedkoopste">Prijs - laag naar hoog</a>
+        <a href="/duurste">Prijs - hoog naar laag</a>
+      </div>
+    </div>
+
+    {% for house in houses limit: 5%}
+    {% render 'partials/list_card.liquid', house: house %}
     {% else %}
-  {% endfor %}
+    {% endfor %}
 </section>
 
 
-  {% render 'partials/foot.liquid' %}
+{% render 'partials/foot.liquid' %}
