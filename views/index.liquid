@@ -19,6 +19,8 @@
   </div>
 
   <div class="filter-popover-container" popover id="filter-popover">
+    {% assign customResultaten = houses.first.customResultaten %}
+
     <div class="popover-space-between">
       <span class="filter-categorie">Filter</span>
       <button class="sluiten" popovertarget="filter-popover" popovertargetaction="hide">Sluiten</button>
@@ -50,29 +52,29 @@
     <div class="filter-woningtype">
       <span class="filter-categorie">Woningtype</span>
 
-      {% render 'partials/woningtype.liquid', legend: 'Woonhuis', label: 'Woonhuis' %}
+      {% render 'partials/woningtype.liquid', legend: 'Woonhuis', label: 'Woonhuis', customResultaten: customResultaten %}
 
-      {% render 'partials/woningtype.liquid', legend: 'Appartement', label: 'appartement' %}
+      {% render 'partials/woningtype.liquid', legend: 'Appartement', label: 'appartement', customResultaten: customResultaten %}
 
-      {% render 'partials/woningtype.liquid', legend: 'Parkeergelegenheid', label: 'parkeergelegenheid' %}
+      {% render 'partials/woningtype.liquid', legend: 'Parkeergelegenheid', label: 'parkeergelegenheid', customResultaten: customResultaten %}
 
-      {% render 'partials/woningtype.liquid', legend: 'Bouwgrond', label: 'bouwgrond' %}
+      {% render 'partials/woningtype.liquid', legend: 'Bouwgrond', label: 'bouwgrond', customResultaten: customResultaten %}
 
-      {% render 'partials/woningtype.liquid', legend: 'Opslagruimte', label: 'opslagruimte' %}
+      {% render 'partials/woningtype.liquid', legend: 'Opslagruimte', label: 'opslagruimte', customResultaten: customResultaten %}
 
-      {% render 'partials/woningtype.liquid', legend: 'Berging', label: 'berging' %}
+      {% render 'partials/woningtype.liquid', legend: 'Berging', label: 'berging', customResultaten: customResultaten %}
 
-      {% render 'partials/woningtype.liquid', legend: 'Ligplaats', label: 'ligplaats' %}
+      {% render 'partials/woningtype.liquid', legend: 'Ligplaats', label: 'ligplaats', customResultaten: customResultaten %}
 
-      {% render 'partials/woningtype.liquid', legend: 'Onderstuk', label: 'onderstuk' %}
+      {% render 'partials/woningtype.liquid', legend: 'Onderstuk', label: 'onderstuk', customResultaten: customResultaten %}
 
-      {% render 'partials/woningtype.liquid', legend: 'Standplaats', label: 'standplaats' %}
+      {% render 'partials/woningtype.liquid', legend: 'Standplaats', label: 'standplaats', customResultaten: customResultaten %}
     </div>
 
     <div class="filter-woningtype">
       <span class="filter-categorie">Soort bouw</span>
 
-      {% render 'partials/woningtype.liquid', legend: 'Nieuwbouw', label: 'nieuwbouw' %}
+      {% render 'partials/woningtype.liquid', legend: 'Nieuwbouw', label: 'nieuwbouw', customResultaten: customResultaten %}
     </div>
 
     <button class="filter-toon-button">Toon 86.685 resultaten</button>
@@ -102,8 +104,8 @@
 
     <div class="resultaten-info-container">
       <div class="resultaten-info">
-        {% comment %} Data hoeveelheid koopwoningen ophalen {% endcomment %}
-        <p>86.685 koopwoningen</p>
+
+        <p>{{ customResultaten }} koopwoningen</p>
         <p>in Nederland</p>
       </div>
       <button class="sorteer" popovertarget="sorteer-popover">

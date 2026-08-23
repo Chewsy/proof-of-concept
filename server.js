@@ -33,6 +33,15 @@ app.listen(app.get('port'), function () {
 })
 
 const baseURL = 'https://fdnd-agency.directus.app/items/f_'
+const maxResultaten = 100000;
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max) + 1;
+}
+
+function getCustomResultaten() {
+  return new Intl.NumberFormat('nl-NL').format(getRandomInt(maxResultaten));
+}
 
 // Haalt een ID uit de object
 function extractFileId(img) {
@@ -58,6 +67,8 @@ app.get('/', async function (request, response) {
   const houses = housesResponseJson.data.map(house => {
     const customEnergielabel = ['A++++', 'A+++', 'A++', 'A+', 'B', 'C', 'D', 'E', 'F', 'G']
 
+    house.customResultaten = getCustomResultaten();
+    
     house.customEnergielabel = customEnergielabel[Math.floor(Math.random() * customEnergielabel.length)]
     house.poster_image = extractFileId(house.poster_image)
     house.gallery = Array.isArray(house.gallery)
@@ -95,6 +106,7 @@ app.get('/goedkoopste', async function (request, response) {
 
   // Haal alle afbeeldingen op net zoals in de index
   const houses = goedkoopsteResponseJSON.data.map(house => {
+    house.customResultaten = getCustomResultaten();
     house.poster_image = extractFileId(house.poster_image)
     house.gallery = Array.isArray(house.gallery)
       ? house.gallery.map(extractFileId).filter(Boolean)
@@ -131,6 +143,7 @@ app.get('/duurste', async function (request, response) {
 
   // Haal alle afbeeldingen op net zoals in de index
   const houses = duursteResponseJSON.data.map(house => {
+    house.customResultaten = getCustomResultaten();
     house.poster_image = extractFileId(house.poster_image)
     house.gallery = Array.isArray(house.gallery)
       ? house.gallery.map(extractFileId).filter(Boolean)
