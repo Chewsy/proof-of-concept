@@ -71,33 +71,6 @@ app.get('/', async function (request, response) {
   });
 });
 
-// Route voor de foto's/media pagina van een specifiek huis
-app.get('/house/:city/:street/:house_slug/media/fotos', async function (request, response) {
-
-  const housesResponse = await fetch(baseURL + "houses?fields=*.*");
-  const housesResponseJson = await housesResponse.json();
-
-  const house = housesResponseJson.data.find(house =>
-    house.city.toLowerCase() === request.params.city.toLowerCase() &&
-    house.street.trim().toLowerCase() === request.params.street.toLowerCase()
-  );
-
-  if (!house) {
-    return response.status(404).send('Huis niet gevonden');
-  }
-
-  house.priceFormatted = house.price.toLocaleString('nl-NL');
-  house.poster_image = extractFileId(house.poster_image)
-  house.gallery = Array.isArray(house.gallery)
-    ? house.gallery.map(extractFileId).filter(Boolean)
-    : []
-  house.thumbnail = house.gallery[0] || house.poster_image
-
-  response.render('house-media.liquid', {
-    house: house
-  });
-});
-
 // Deze functie wordt dus uitgevoerd als de browser naar /goedkoopste gaat
 app.get('/goedkoopste', async function (request, response) {
 
