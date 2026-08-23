@@ -467,14 +467,22 @@ nav {
         grid-template-rows: repeat(2, auto);
         gap: var(--xs-size);
 
-        & button {
-            grid-column-start: 2;
-            grid-row-start: 1;
-            align-self: start;
-            justify-self: end;
+        & form {
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
 
-            background-color: transparent;
-            border: none;
+            & button {
+                grid-column-start: 2;
+                grid-row-start: 1;
+                align-self: start;
+                justify-self: end;
+
+                background-color: transparent;
+                border: none;
+            }
         }
 
         & .list-details {
@@ -670,7 +678,7 @@ input[type="radio" i] {
         border-bottom: var(--s-border) solid var(--lichtgrijs);
 
         /* Simulatie dat "relevantie" optie de default/active is (on page loading) */
-        &:first-child{
+        &:first-child {
             background-color: hsl(200 100% 95%);
         }
     }

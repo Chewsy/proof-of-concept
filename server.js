@@ -48,6 +48,12 @@ app.get('/', async function (request, response) {
   const housesResponse = await fetch(baseURL + "houses?fields=*.*");
   const housesResponseJson = await housesResponse.json();
 
+  // Lijst ID 20 is mijn persoonlijke lijkst
+  const favListResponse = await fetch(baseURL + "list/20");
+  const favListResponseJson = await favListResponse.json();
+
+  const favorieteHuizenIds = favListResponseJson.data ? favListResponseJson.data.houses : [];
+
   //  Maakt een object lijst van alle huizen
   const houses = housesResponseJson.data.map(house => {
     house.poster_image = extractFileId(house.poster_image)
@@ -60,7 +66,8 @@ app.get('/', async function (request, response) {
 
   // Exporteer data naar de index
   response.render('index.liquid', {
-    houses: houses
+    houses: houses,
+    favorieteHuizenIds: favorieteHuizenIds
   });
 });
 

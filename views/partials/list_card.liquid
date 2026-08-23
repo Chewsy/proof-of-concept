@@ -10,14 +10,18 @@
   </div>
 
   <div class="list-details-container">
+    <form action="/favoriet" method="POST">
+
     <button
       class="interactie {% if favorieteHuizenIds contains house.id %}favoriet{% endif %}"
       id="favoriet-knop"
       data-house-id="{{ house.id }}"
+      type="submit"
     >
 
       <img src="./assets/hart_icon.svg" alt="Hart icoon">
     </button>
+    </form>
 
     <div class="list-details">
     <div class="list-straat">
