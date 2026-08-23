@@ -693,3 +693,10 @@ input[type="radio" i] {
     display: flex;
     flex-direction: column;
 }
+
+/* Woning detailpagina */
+
+a {
+    text-decoration: none;
+    color: var(--donkergrijs);
+}
