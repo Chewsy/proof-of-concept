@@ -14,9 +14,9 @@
 
     <button
       class="interactie {% if favorieteHuizenIds contains house.id %}favoriet{% endif %}"
-      id="favoriet-knop"
-      data-house-id="{{ house.id }}"
       type="submit"
+      name="house_id"
+      value="{{ house.id }}"
     >
 
       <img src="./assets/hart_icon.svg" alt="Hart icoon">

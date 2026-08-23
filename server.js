@@ -128,3 +128,44 @@ app.get('/duurste', async function (request, response) {
   // responseJSON renderen naar de pagina
   response.render('index.liquid', { houses: houses });
 });
+
+// Deze functie wordt dus uitgevoerd als ik op de hart icoon klik
+app.post('/favoriet', async function (request, response) {
+  const houseId = Number(request.body.house_id);
+
+  const listResponse = await fetch(baseURL + 'list/20');
+  const listResponseJson = await listResponse.json();
+
+  let favorieteHuizenIds = [];
+
+  if (
+    listResponseJson.data &&
+    listResponseJson.data.houses
+  ) {
+    favorieteHuizenIds = listResponseJson.data.houses;
+  }
+
+  let nieuweFavorieteHuizenIds = [];
+
+  if (favorieteHuizenIds.includes(houseId)) {
+    nieuweFavorieteHuizenIds =
+      favorieteHuizenIds.filter(id => id !== houseId);
+  } else {
+
+    nieuweFavorieteHuizenIds = favorieteHuizenIds.slice();
+
+    nieuweFavorieteHuizenIds.push(houseId);
+  }
+
+  await fetch(baseURL + 'list/20', {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      houses: nieuweFavorieteHuizenIds
+    })
+  });
+
+  response.redirect('/');
+});
