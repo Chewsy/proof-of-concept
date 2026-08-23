@@ -118,7 +118,7 @@
     </div>
 
     {% for house in houses limit: 5%}
-    {% render 'partials/list_card.liquid', house: house %}
+    {% render 'partials/list_card.liquid', house: house, favorieteHuizenIds: favorieteHuizenIds %}
     {% else %}
     {% endfor %}
 </section>

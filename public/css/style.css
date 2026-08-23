@@ -143,6 +143,14 @@ nav {
         }
     }
 
+    form{
+
+        img{
+        width: 25px;
+        height: 25px;
+        }
+    }
+
     img {
         width: 100%;
         z-index: 0;
@@ -699,4 +707,11 @@ input[type="radio" i] {
 a {
     text-decoration: none;
     color: var(--donkergrijs);
+}
+
+/* Favorieten */
+
+h1 {
+    color: var(--blauw);
+    margin-bottom: var(--d-size);
 }

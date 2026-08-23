@@ -89,6 +89,10 @@ app.get('/goedkoopste', async function (request, response) {
   // Response omzetten naar JSON
   const goedkoopsteResponseJSON = await goedkoopsteResponse.json();
 
+  const favListResponse = await fetch(baseURL + 'list/20');
+  const favListResponseJson = await favListResponse.json();
+  const favorieteHuizenIds = favListResponseJson.data ? favListResponseJson.data.houses : [];
+
   // Haal alle afbeeldingen op net zoals in de index
   const houses = goedkoopsteResponseJSON.data.map(house => {
     house.poster_image = extractFileId(house.poster_image)
@@ -100,7 +104,10 @@ app.get('/goedkoopste', async function (request, response) {
   })
 
   // responseJSON renderen naar de pagina
-  response.render('index.liquid', { houses: houses });
+  response.render('index.liquid', {
+    houses: houses,
+    favorieteHuizenIds: favorieteHuizenIds
+  });
 });
 
 // Deze functie wordt dus uitgevoerd als de browser naar /duurste gaat
@@ -118,6 +125,10 @@ app.get('/duurste', async function (request, response) {
   // Response omzetten naar JSON
   const duursteResponseJSON = await duursteResponse.json();
 
+  const favListResponse = await fetch(baseURL + 'list/20');
+  const favListResponseJson = await favListResponse.json();
+  const favorieteHuizenIds = favListResponseJson.data ? favListResponseJson.data.houses : [];
+
   // Haal alle afbeeldingen op net zoals in de index
   const houses = duursteResponseJSON.data.map(house => {
     house.poster_image = extractFileId(house.poster_image)
@@ -129,7 +140,10 @@ app.get('/duurste', async function (request, response) {
   })
 
   // responseJSON renderen naar de pagina
-  response.render('index.liquid', { houses: houses });
+  response.render('index.liquid', {
+    houses: houses,
+    favorieteHuizenIds: favorieteHuizenIds
+  });
 });
 
 // Deze functie wordt dus uitgevoerd als ik op de hart icoon klik

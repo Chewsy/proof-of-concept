@@ -12,18 +12,16 @@
         </path>
       </svg>
     </button>
-    <button class="interactie {% if favorieteHuizenIds contains house.id %}favoriet{% endif %}" id="favorietKnop"
-      data-house-id="{{ house.id }}">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" role="presentation"
-        viewBox="0 0 48 48">
-        <path class="icon-outline"
-          d="M39 9.86A10.17 10.17 0 0032 7a9.9 9.9 0 00-6 2 10.1 10.1 0 00-2 2 10.1 10.1 0 00-2-2 9.91 9.91 0 00-12 0 9.9 9.9 0 00-4 8c0 15 16 24 18 24s18-9 18-24a10 10 0 00-3-7.14zm-15 28a29.61 29.61 0 01-12.72-12.1A18.77 18.77 0 019 17a7 7 0 0113.41-2.81c.06.14.11.29.17.44a1.49 1.49 0 002.82 0c.05-.15.11-.3.17-.44A7 7 0 0139 17a18.77 18.77 0 01-2.28 8.81A29.61 29.61 0 0124 37.91z">
-        </path>
-        <path class="icon-filled"
-          d="M39 9.86A10.17 10.17 0 0032 7a9.9 9.9 0 00-6 2 10.1 10.1 0 00-2 2 10.1 10.1 0 00-2-2 9.91 9.91 0 00-12 0 9.9 9.9 0 00-4 8c0 15 16 24 18 24s18-9 18-24a10 10 0 00-3-7.14z">
-        </path>
-      </svg>
-    </button>
+    <form action="/favoriet" method="POST">
+
+      <button class="interactie {% if favorieteHuizenIds contains house.id %}favoriet{% endif %}" id="favorietKnop"
+        type="submit" name="house_id" value="{{ house.id }}">
+
+        <img
+          src="{% if favorieteHuizenIds contains house.id %}/assets/hart_icon_isTrue.svg{% else %}/assets/hart_icon.svg{% endif %}"
+          alt="Hart icoon">
+      </button>
+    </form>
   </div>
 
   <img src="https://fdnd-agency.directus.app/assets/{{ house.poster_image }}.png">
@@ -95,7 +93,8 @@
         class="size-[3.75rem] overflow-hidden rounded-md border border-neutral-20 motion-safe:transition-transform motion-safe:duration-100 motion-safe:ease-in-out-soft motion-safe:active:scale-95 md:size-[4.25rem]">
         <img src="https://nuxt.fstatic.nl/716adbe2a1f60dad/detail/_nuxt/map.Bc4Msx4Z.svg" aria-hidden="true"
           class="size-full object-cover motion-safe:transition-transform motion-safe:duration-500 motion-safe:ease-in-out-soft motion-safe:hover:scale-120"
-          height="68" width="68"></div>
+          height="68" width="68">
+      </div>
       <a href="#">Kaart</a>
     </div>
 </section>
